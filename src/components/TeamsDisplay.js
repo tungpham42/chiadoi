@@ -6,7 +6,7 @@ const TeamsDisplay = ({ teams }) => {
   const isSmallScreen = useIsSmallScreen();
 
   return (
-    <Col md={7}>
+    <Col md={7} className={isSmallScreen ? "border-top mt-4" : ""}>
       <h4 className={`${isSmallScreen ? "mt-4 " : " "}mb-4 text-success`}>
         Kết quả
       </h4>
