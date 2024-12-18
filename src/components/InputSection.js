@@ -11,6 +11,12 @@ const InputSection = ({
 }) => {
   const isSmallScreen = useIsSmallScreen();
 
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+    }
+  };
+
   return (
     <Col md={5} className={isSmallScreen ? "" : "border-end"}>
       <h4 className="mb-4 text-primary">Chi tiết</h4>
@@ -38,6 +44,7 @@ const InputSection = ({
             min="2"
             value={numTeams}
             onChange={(e) => setNumTeams(Number(e.target.value))}
+            onKeyDown={handleKeyDown}
             className="border-primary"
           />
         </Form.Group>
