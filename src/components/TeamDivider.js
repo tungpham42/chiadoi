@@ -48,7 +48,7 @@ const TeamDivider = () => {
         </Card.Body>
 
         <Card.Footer className="bg-light text-center text-muted">
-          <small>© {currentYear} Ứng dụng Chia đội.</small>
+          <small>© {currentYear} Phạm Tùng</small>
         </Card.Footer>
       </Card>
     </Container>
