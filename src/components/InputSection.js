@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import React from "react";
 import { Form, Col, Button } from "react-bootstrap";
+import useIsSmallScreen from "./useIsSmallScreen";
 
 const InputSection = ({
   names,
@@ -8,18 +9,7 @@ const InputSection = ({
   setNumTeams,
   handleGenerateTeams,
 }) => {
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsSmallScreen(window.innerWidth < 768);
-    };
-
-    handleResize(); // Check initial screen size
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  const isSmallScreen = useIsSmallScreen();
 
   return (
     <Col md={5} className={isSmallScreen ? "" : "border-end"}>
